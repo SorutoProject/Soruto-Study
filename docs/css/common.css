@@ -12,6 +12,9 @@ background:#fefefe;
 font-size:14pt;
 font-weight: bold;
 }
+button:active{
+  background:#d6d4d4;
+  }
 }
 @media screen and (max-width: 480px){
 body{
@@ -27,4 +30,7 @@ background:#fefefe;
 font-size:14pt;
 font-weight: bold;
 }
+button:active{
+  background:#d6d4d4;
+  }
 }
