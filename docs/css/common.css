@@ -2,3 +2,8 @@ body{
 background:#004d00;
 color:#fefefe;
 }
+button{
+border-radius:5px;
+color:#000000;
+background:#fefefe;
+}
