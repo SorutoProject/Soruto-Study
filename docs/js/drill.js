@@ -1,4 +1,5 @@
 window.onload = function(){
+so.setVal("num","0");
 var xhr = new XMLHttpRequest();
   xhr.open('GET', "txtdb/sample.txt", true);
   xhr.onreadystatechange = function(){
@@ -13,8 +14,9 @@ var xhr = new XMLHttpRequest();
   showQ();
 };
 function showQ(){
+var num = so.getVal("num")
 var dlist = so.getVal("qlist").split("\r\n");
-var nq = dlist[0];
+var nq = dlist[num];
 var nqlist = nq.split("|");
 if(nqlist[0]=="c4"){
 so.divIH("question",nqlist[1]);
@@ -23,6 +25,7 @@ so.setVal("c2b",nqlist[3]);
 so.setVal("c3b",nqlist[4]);
 so.setVal("c4b",nqlist[5]);
 so.setVal("ansnum",nqlist[6]);
+so.setVal("num",parseInt(num) + 1);
 }
 else{
 so.divIH("question",'問題はこれで終わりです。お疲れ様でした。<br><b><a href="../">戻る</a></b>')
