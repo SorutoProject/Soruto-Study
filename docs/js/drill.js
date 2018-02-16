@@ -21,6 +21,10 @@ var xhr = new XMLHttpRequest();
     }
     if(xhr.readyState === 4 && xhr.status === 404){
         so.divIH("question",'問題定義ファイルの取得に失敗しました。<br>TOP画面からやり直してください。<br><b><a href="../">TOPへ</a></b>');
+        so.displayNone("c1b");
+        so.displayNone("c2b");
+        so.displayNone("c3b");
+        so.displayNone("c4b");
     }
   };
   xhr.send(null);
