@@ -1,7 +1,15 @@
 window.onload = function(){
+//copyed from https://qiita.com/tonkatu_tanaka/items/99d167ded9330dbc4019
+//get the URL parameter
+var arg = new Object;
+var pair=location.search.substring(1).split('&');
+for(var i=0;pair[i];i++) {
+    var kv = pair[i].split('=');
+    arg[kv[0]]=kv[1];
+}
 so.setVal("num","0");
 var xhr = new XMLHttpRequest();
-  xhr.open('GET', "txtdb/sample.txt", true);
+  xhr.open('GET', "txtdb/" + arg.q + ".txt", true);
   xhr.onreadystatechange = function(){
     if (xhr.readyState === 4 && xhr.status === 200){
       so.setVal("qlist",xhr.responseText);
