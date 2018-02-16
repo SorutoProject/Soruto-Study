@@ -22,5 +22,16 @@ so.setVal("c1b",nqlist[2]);
 so.setVal("c2b",nqlist[3]);
 so.setVal("c3b",nqlist[4]);
 so.setVal("c4b",nqlist[5]);
+so.setVal("ansnum",nqlist[6]);
+}
+else{
+so.divIH("question",'問題はこれで終わりです。お疲れ様でした。<br><b><a href="../">戻る</a></b>')
+}
+}
+function answer(n){
+var answer = so.getVal("ansnum");
+if(answer == n){
+so.modal.ms("OK!!","正解です。");
+
 }
 }
