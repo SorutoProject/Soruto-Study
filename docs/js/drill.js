@@ -1,6 +1,6 @@
 window.onload = function(){
 var xhr = new XMLHttpRequest();
-  xhr.open('GET', location.href, true);
+  xhr.open('GET', "txtdb/sample.txt", true);
   xhr.onreadystatechange = function(){
     if (xhr.readyState === 4 && xhr.status === 200){
       so.setVal("qlist",xhr.responseText);
