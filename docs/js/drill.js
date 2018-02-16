@@ -37,5 +37,8 @@ if(answer == n){
 so.modal.ms("OK!!","正解です。");
 so.modal.cTime(1500);
 showQ();
+}else{
+so.modal.ms("Oops!!","不正解です。<br>正解するまでは、先に進めません");
+so.modal.cTime(2500);
 }
 }
