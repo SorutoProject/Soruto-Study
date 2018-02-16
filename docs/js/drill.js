@@ -19,6 +19,9 @@ var xhr = new XMLHttpRequest();
       so.setVal("qlist",xhr.responseText);
         showQ();
     }
+    if(xhr.readyState === 4 && xhr.status === 404){
+        so.divIH("question",'問題定義ファイルの取得に失敗しました。<br>TOP画面からやり直してください。<br><b><a href="../">TOPへ</a></b>');
+    }
   };
   xhr.send(null);
 };
