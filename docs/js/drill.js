@@ -34,7 +34,15 @@ so.setVal("c2b",nqlist[3]);
 so.setVal("c3b",nqlist[4]);
 so.setVal("c4b",nqlist[5]);
 so.setVal("ansnum",nqlist[6]);
-}else{
+}
+if(nqlist[0]=="end"){
+  so.divIH("question",'問題はこれで終わりです。お疲れ様でした。<br><b><a href="../">戻る</a></b>');
+  so.displayNone("c1b");
+  so.displayNone("c2b");
+  so.displayNone("c3b");
+  so.displayNone("c4b");
+}
+else{
 so.divIH("question",'不明な識別子が見つかりました。<br>一旦Top画面へお戻りください。<br><b><a href="../">戻る</a></b>');
 }
 }
