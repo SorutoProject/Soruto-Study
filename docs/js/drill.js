@@ -17,6 +17,10 @@ function showQ(){
 var num = so.getVal("num")
 var dlist = so.getVal("qlist").split("\r\n");
 var nq = dlist[num];
+if(nq===undefined){
+//問題終了時の処理
+  so.divIH("question",'問題はこれで終わりです。お疲れ様でした。<br><b><a href="../">戻る</a></b>');
+}else{
 var nqlist = nq.split("|");
 if(nqlist[0]=="c4"){
 so.divIH("question",nqlist[1]);
@@ -26,8 +30,9 @@ so.setVal("c3b",nqlist[4]);
 so.setVal("c4b",nqlist[5]);
 so.setVal("ansnum",nqlist[6]);
 }
+}
 else{
-so.divIH("question",'問題はこれで終わりです。お疲れ様でした。<br><b><a href="../">戻る</a></b>')
+so.divIH("question",'不明な識別子が見つかりました。<br>一旦Top画面へお戻りください。<br><b><a href="../">戻る</a></b>');
 }
 }
 function answer(n){
