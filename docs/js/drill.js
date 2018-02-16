@@ -27,6 +27,7 @@ if(nq===undefined){
   so.displayNone("c4b");
 }else{
 var nqlist = nq.split("|");
+//識別子を定義
 if(nqlist[0]=="c4"){
 so.divIH("question",nqlist[1]);
 so.setVal("c1b",nqlist[2]);
@@ -41,6 +42,22 @@ if(nqlist[0]=="end"){
   so.displayNone("c2b");
   so.displayNone("c3b");
   so.displayNone("c4b");
+}
+if(nqlist[0]=="c3"){
+so.divIH("question",nqlist[1]);
+so.setVal("c1b",nqlist[2]);
+so.setVal("c2b",nqlist[3]);
+so.setVal("c3b",nqlist[4]);
+so.setVal("c4b","×");
+so.setVal("ansnum",nqlist[5]);
+}
+if(nqlist[0]=="c2"){
+so.divIH("question",nqlist[1]);
+so.setVal("c1b",nqlist[2]);
+so.setVal("c2b",nqlist[3]);
+so.setVal("c3b","×");
+so.setVal("c4b","×");
+so.setVal("ansnum",nqlist[4]);
 }
 }
 }
