@@ -5,13 +5,14 @@ var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function(){
     if (xhr.readyState === 4 && xhr.status === 200){
       so.setVal("qlist",xhr.responseText);
+        showQ();
     }
     if (xhr.readyState === 4 && xhr.status === 0){
       so.setVal("qlist",xhr.responseText);
+        showQ();
     }
   };
   xhr.send(null);
-  showQ();
 };
 function showQ(){
 var num = so.getVal("num")
