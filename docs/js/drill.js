@@ -20,6 +20,10 @@ var nq = dlist[num];
 if(nq===undefined){
 //問題終了時の処理
   so.divIH("question",'問題はこれで終わりです。お疲れ様でした。<br><b><a href="../">戻る</a></b>');
+  so.displayNone("c1b");
+  so.displayNone("c2b");
+  so.displayNone("c3b");
+  so.displayNone("c4b");
 }else{
 var nqlist = nq.split("|");
 if(nqlist[0]=="c4"){
