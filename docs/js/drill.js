@@ -16,7 +16,7 @@ var xhr = new XMLHttpRequest();
 };
 function showQ(){
 var num = so.getVal("num")
-var dlist = so.getVal("qlist").split("\r\n");
+var dlist = so.getVal("qlist").split(/\r\n|\n/);
 var nq = dlist[num];
 if(nq===undefined){
 //問題終了時の処理
