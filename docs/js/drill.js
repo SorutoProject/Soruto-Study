@@ -13,7 +13,7 @@ var xhr = new XMLHttpRequest();
   showQ();
 };
 function showQ(){
-var dlist = so.getVal("qlist").value.split("\r\n");
+var dlist = so.getVal("qlist").split("\r\n");
 var nq = dlist[0];
 var nqlist = nq.split("|");
 if(nqlist[0]=="c4"){
