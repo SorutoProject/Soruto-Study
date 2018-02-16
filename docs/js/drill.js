@@ -35,6 +35,7 @@ function answer(n){
 var answer = so.getVal("ansnum");
 if(answer == n){
 so.modal.ms("OK!!","正解です。");
-
+so.modal.cTime(1500);
+showQ();
 }
 }
