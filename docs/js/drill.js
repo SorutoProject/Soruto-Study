@@ -29,10 +29,9 @@ so.setVal("c2b",nqlist[3]);
 so.setVal("c3b",nqlist[4]);
 so.setVal("c4b",nqlist[5]);
 so.setVal("ansnum",nqlist[6]);
-}
-}
-else{
+}else{
 so.divIH("question",'不明な識別子が見つかりました。<br>一旦Top画面へお戻りください。<br><b><a href="../">戻る</a></b>');
+}
 }
 }
 function answer(n){
