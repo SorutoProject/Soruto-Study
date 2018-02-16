@@ -47,12 +47,12 @@ if(nqlist[0]=="end"){
 function answer(n){
 var answer = so.getVal("ansnum");
 if(answer == n){
-so.modal.ms("OK!!","正解です。");
+so.modal.al("OK!!","正解です。");
 so.modal.cTime(1500);
 setTimeout("showQ()",1500);
 so.setVal("num",parseInt(so.getVal("num")) + 1);
 }else{
-so.modal.ms("Oops!!","不正解です。<br>正解するまでは、先に進めません");
+so.modal.al("Oops!!","不正解です。<br>正解するまでは、先に進めません");
 so.modal.cTime(2500);
 }
 }
