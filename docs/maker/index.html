@@ -9,6 +9,20 @@ var a1 = so.getVal("a1");
 var a2 = so.getVal("a2");
 var a3 = so.getVal("a3");
 var a4 = so.getVal("a4");
+//1行目のとき
+if(now == ""){
+  if(mode=="c2"){
+  so.setVal("list",now + mode + "|" + qu + "|" + a1 + "|" + a2);
+  }
+  else if(mode=="c3"){
+  so.setVal("list",now +  mode + "|" + qu + "|" + a1 + "|" + a2 + "|" + a3);
+  }
+  else if(mode=="c4"){
+  so.setVal("list",now + mode + "|" + qu + "|" + a1 + "|" + a2 + "|" + a3 + "|" + a4);
+  }
+}
+//それ以外
+else{
   if(mode=="c2"){
   so.setVal("list",now + "\n" + mode + "|" + qu + "|" + a1 + "|" + a2);
   }
@@ -18,6 +32,7 @@ var a4 = so.getVal("a4");
   else if(mode=="c4"){
   so.setVal("list",now + "\n" + mode + "|" + qu + "|" + a1 + "|" + a2 + "|" + a3 + "|" + a4);
   }
+}
 }
 </script>
 </head>
