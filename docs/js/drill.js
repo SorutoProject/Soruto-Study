@@ -79,7 +79,7 @@ so.setVal("ansnum",nqlist[4]);
 function answer(n){
 var answer = so.getVal("ansnum");
 if(answer == n){
-so.modal.al("OK!!","正解です。");
+so.modal.al("OK!!","正解です!");
 so.getId("cor").play();
 so.modal.cTime(1500);
 setTimeout("showQ()",1500);
