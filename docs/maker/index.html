@@ -42,6 +42,10 @@ so.setVal("a4","");
 so.setVal("question","");
 
 }
+function addend(){
+var now = so.getVal("list");
+so.setVal("list",now + "\nend");
+}
 //ダウンロード
 function dfile(aid){
 	var content = so.getVal("list");
@@ -83,7 +87,7 @@ function dfile(aid){
 <option value="3">選択肢3</option>
 <option value="4">選択肢4</option>
 </select></p>
-  <p><input type="button" onclick="add();" value="追加"></p>
+  <p><input type="button" onclick="add();" value="追加"> <input type="button" onclick="addend();" value="end(終了識別子)を入力"> </p>
   <p>List<br><textarea id="list"></textarea></p><p>リストID:<input type="text" id="filename"><br>
    <a href="#" id="slink" onclick="dfile('slink');">保存(ダウンロード)</a></p>
   <div id="so-modal"></div>
