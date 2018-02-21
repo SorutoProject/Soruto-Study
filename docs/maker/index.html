@@ -38,7 +38,7 @@ else{
 //ダウンロード
 function dfile(aid){
 	var content = so.getVal("list");
-	var fname = so.getVal("filename");
+	var fname = so.getVal("filename") + ".txt";
 	var linkid = so.getId(aid);//「保存」リンクのエレメント取得
 	if(fname === "" | fname === undefined || fname===null){
 		linkid.href = "#";
