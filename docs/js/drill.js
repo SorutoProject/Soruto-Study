@@ -80,11 +80,13 @@ function answer(n){
 var answer = so.getVal("ansnum");
 if(answer == n){
 so.modal.al("OK!!","正解です。");
+so.getVal("cor").play();
 so.modal.cTime(1500);
 setTimeout("showQ()",1500);
 so.setVal("num",parseInt(so.getVal("num")) + 1);
 }else{
 so.modal.al("Oops!!","不正解です。<br>正解するまでは、先に進めません");
+so.getVal("wrong").play();
 so.modal.cTime(2500);
 }
 }
