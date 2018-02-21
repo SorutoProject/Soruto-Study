@@ -1,25 +1,41 @@
 <html><head><title>Soruto Study 問題作成ツール</title><meta charset="utf-8">
-<script></script>
+  <script src="../js/soruto_ejb-min.js"></script>
+<script>
+function add(){
+var mode = so.getVal("mode");
+var now = so.getVal("list");
+var qu = so.getVal("question");
+var a1 = so.getVal("a1");
+var a2 = so.getVal("a2");
+var a3 = so.getVal("a3");
+var a4 = so.getVal("a4");
+  if(mode=="c2"){
+  so.setVal("list",now + "\n" + mode + "|" + qu + "|" + a1 + "|" + a2);
+  }
+  else if(mode=="c3"){
+  so.setVal("list",now + "\n" + mode + "|" + qu + "|" + a1 + "|" + a2 + "|" + a3);
+  }
+  else if(mode=="c4"){
+  so.setVal("list",now + "\n" + mode + "|" + qu + "|" + a1 + "|" + a2 + "|" + a3 + "|" + a4);
+  }
+}
+</script>
 </head>
 <body>
 <p><b>Soruto Study 問題作成ツール</b></p>
 <p>問題の種類:<br>
-<select size="1">
+<select size="1" id="mode">
 <option value="c2">2択問題</option>
 <option value="c3">3択問題</option>
 <option value="c4">4択問題</option>
 </select>
 </p>
+  <p>問題:<br><input type="text" id="question"></p>
 <p>選択肢1<br><input type="text" id="a1"><br>
 選択肢2<br><input type="text" id="a2"><br>
 選択肢3<br><input type="text" id="a3"><br>
 選択肢4<br><input type="text" id="a4"></p>
-<p>正解の選択肢:<br>
-<select size="1">
-<option value="an1">選択肢1</option>
-<option value="an2">選択肢2</option>
-<option value="an3">選択肢3</option>
-<option value="an4">選択肢4</option>
-</select>
 </p>
+  <p><input type="button" onclick="add();" value="追加"></p>
+  <p>List<br><textarea id="list"></textarea></p>
 </body></html>
