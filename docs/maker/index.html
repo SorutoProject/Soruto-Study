@@ -38,9 +38,10 @@ else{
 //ダウンロード
 function dfile(aid){
 	var content = so.getVal("list");
+	var mfname = so.getVal("filename");
 	var fname = so.getVal("filename") + ".txt";
 	var linkid = so.getId(aid);//「保存」リンクのエレメント取得
-	if(fname === "" | fname === undefined || fname===null){
+	if(mfname === "" | mfname === undefined || mfname===null){
 		linkid.href = "#";
 		so.modal.al("情報","リストIDの入力がないため、<br>保存処理をキャンセルしました。");
 	}else{
@@ -51,7 +52,6 @@ function dfile(aid){
 	linkid.download = fname;
 	so.modal.ms("保存","間もなくダウンロードが開始されます。");
 	so.modal.cTime(2500);
-	so.getId("filename").value = fname;
 	}
 }
 </script>
