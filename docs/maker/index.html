@@ -47,23 +47,45 @@ var now = so.getVal("list");
 so.setVal("list",now + "\nend");
 }
 //ダウンロード
-function dfile(aid){
-	var content = so.getVal("list");
-	var mfname = so.getVal("filename");
-	var fname = so.getVal("filename") + ".txt";
-	var linkid = so.getId(aid);//「保存」リンクのエレメント取得
-	if(mfname === "" | mfname === undefined || mfname===null){
-		linkid.href = "#";
-		so.modal.al("情報","リストIDの入力がないため、<br>保存処理をキャンセルしました。");
-	}else{
-	//以下、http://furudate.hatenablog.com/entry/2014/06/02/172923を参考にしました
-	var data = new Blob([content], {"type" : "application/x-msdownload"});
-	window.URL = window.URL || window.webkitURL;
-	linkid.href = window.URL.createObjectURL(data);
-	linkid.download = fname;
-	so.modal.ms("保存","間もなくダウンロードが開始されます。");
-	so.modal.cTime(2500);
-	}
+function dfile(){
+if(so.getVal("filename") == ""){
+so.modal.al("情報","認識用文字列が入力されていません。");
+}
+else{
+// ダウンロードしたいコンテンツ、MIMEType、ファイル名
+var content  = so.getVal("list");
+var mimeType = 'text/plain';
+var name     = so.getVal("filename") + ".txt";
+
+// BOMは文字化け対策
+var bom  = new Uint8Array([0xEF, 0xBB, 0xBF]);
+var blob = new Blob([bom, content], {type : mimeType});
+
+var a = document.createElement("a");
+a.download = name;
+a.target   = '_blank';
+
+if (window.navigator.msSaveBlob) {
+  // for IE
+  window.navigator.msSaveBlob(blob, name)
+}
+else if (window.URL && window.URL.createObjectURL) {
+  // for Firefox
+  a.href = window.URL.createObjectURL(blob);
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+else if (window.webkitURL && window.webkitURL.createObject) {
+  // for Chrome
+  a.href = window.webkitURL.createObjectURL(blob);
+  a.click();
+}
+else {
+  // for Safari
+  window.open('data:' + mimeType + ';base64,' + window.Base64.encode(content), '_blank');
+}
+}
 }
 </script>
 </head>
